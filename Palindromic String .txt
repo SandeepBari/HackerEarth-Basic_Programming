@@ -1,0 +1,63 @@
+// Palindromic String 
+
+/*
+You have been given a String S. You need to find and print whether this string is a palindrome or not. If yes, print "YES" (without quotes), else print "NO" (without quotes).
+
+Input Format
+The first and only line of input contains the String S. The String shall consist of lowercase English alphabets only.
+
+Output Format
+Print the required answer on a single line.
+
+Constraints
+
+Note
+String S consists of lowercase English Alphabets only.
+SAMPLE INPUT
+
+aba
+
+SAMPLE OUTPUT
+
+YES
+
+Time Limit: 1.0 sec(s) for each input file.
+Memory Limit: 256 MB
+Source Limit: 1024 KB 
+
+*/
+
+    #include <stdio.h>
+    #include <stdlib.h>
+     
+    int main()
+    {
+    	int checkFlag= 0, arrLimit= 100, i= 0;
+    	char str[100];
+    	scanf("%s",&str);
+     
+    	for (i= 0; i< arrLimit; i++)
+    	{
+    		if (str[i]=='\0')
+    		{
+    			arrLimit= i;
+    			break;
+    		}
+    	}
+     
+    	for (i= 0; i< arrLimit; i++)
+    	{
+    		if (str[i] != str[arrLimit-i-1])
+    		{
+    			checkFlag= 1;
+    			break;
+    		}	
+    	}
+     
+    	if (checkFlag==0)
+    	printf("YES");
+    	else
+    	printf("NO");
+    	
+    	return 0;
+    }
